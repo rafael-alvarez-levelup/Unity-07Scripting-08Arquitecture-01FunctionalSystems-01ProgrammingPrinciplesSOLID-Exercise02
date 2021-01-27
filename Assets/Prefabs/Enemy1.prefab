@@ -97,7 +97,7 @@ GameObject:
   - component: {fileID: 4231983607744825307}
   - component: {fileID: 6833376655458080401}
   - component: {fileID: 8072854278830175838}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Enemy1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -200,7 +200,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destroyMask:
     serializedVersion: 2
-    m_Bits: 1
+    m_Bits: 1024
 --- !u!114 &8072854278830175838
 MonoBehaviour:
   m_ObjectHideFlags: 0
