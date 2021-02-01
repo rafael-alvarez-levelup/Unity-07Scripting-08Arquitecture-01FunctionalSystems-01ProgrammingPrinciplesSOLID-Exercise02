@@ -213,6 +213,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2173a7636fe3c2344a25748caeb3fab3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fireRate: 1
   missilePrefab: {fileID: 1732871942783851870, guid: 211229c437456914b9b0a5911581bb77, type: 3}
 --- !u!1 &2243276429881723225
 GameObject:

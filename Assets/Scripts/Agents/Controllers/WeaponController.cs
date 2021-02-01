@@ -17,7 +17,11 @@ public class WeaponController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            weaponBase.Fire(firePoint);
+            if (weaponBase.CanFire())
+            {
+                weaponBase.Fire(firePoint);
+                weaponBase.SetNextFireTime();
+            }
         }
     }
 }

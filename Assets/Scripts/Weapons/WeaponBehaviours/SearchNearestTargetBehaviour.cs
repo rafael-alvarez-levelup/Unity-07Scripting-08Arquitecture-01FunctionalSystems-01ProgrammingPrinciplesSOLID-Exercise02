@@ -9,15 +9,19 @@ public class SearchNearestTargetBehaviour : MonoBehaviour
     {
         Transform target = null;
 
+        float minDistance = float.MaxValue;
+
         Collider[] colliders = Physics.OverlapSphere(transform.position, radius, layer);
 
-        float distance = float.MaxValue;
-
-        foreach(Collider collider in colliders)
+        foreach (Collider collider in colliders)
         {
-            if(Vector3.Distance(transform.position, collider.transform.position) < distance)
+            float distance = Vector3.SqrMagnitude(transform.position - collider.transform.position);
+
+            if (distance < minDistance)
             {
                 target = collider.transform;
+
+                minDistance = distance;
             }
         }
 

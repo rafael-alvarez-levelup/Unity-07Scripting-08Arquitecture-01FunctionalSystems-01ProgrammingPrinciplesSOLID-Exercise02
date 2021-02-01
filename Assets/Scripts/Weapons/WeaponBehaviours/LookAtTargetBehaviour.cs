@@ -2,7 +2,7 @@
 
 public class LookAtTargetBehaviour : MonoBehaviour
 {
-    [SerializeField] private float speed = 10f;
+    [SerializeField] private float rotationSpeed = 10f;
 
     private Transform target;
 
@@ -10,10 +10,10 @@ public class LookAtTargetBehaviour : MonoBehaviour
     {
         if (target == null) return;
 
-        Vector3 toTarget = target.position - transform.position;
-        float angle = Mathf.Atan2(toTarget.y, toTarget.x) * Mathf.Rad2Deg - 90f;
-        Quaternion quaternion = Quaternion.AngleAxis(angle, Vector3.forward);
-        transform.rotation = Quaternion.Slerp(transform.rotation, quaternion, speed * Time.deltaTime);
+        Vector3 vectorToTarget = target.position - transform.position;
+        float angleToRotate = Mathf.Atan2(vectorToTarget.y, vectorToTarget.x) * Mathf.Rad2Deg - 90f;
+        Quaternion targetRotation = Quaternion.AngleAxis(angleToRotate, Vector3.forward);
+        transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
     }
 
     public void SetTarget(Transform target)
